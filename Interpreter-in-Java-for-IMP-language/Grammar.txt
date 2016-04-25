@@ -1,0 +1,11 @@
+<expr>::=[<op><expr><expr>]|<symbol>|<value>
+<symbol>::=[a-zA-Z]+
+<value>::=[0-9]+
+<op>::='+'|'*'|'=='|‘<’
+<prog>::= [= <symbol> <expr>]|
+          [; <prog> <prog>] | 
+          [if <expr> <prog> <prog>]
+          [while <expr> <prog>]
+          [return <expr>]
+
+Example of input: [; [= x 1] [; [= i 0] [; [while [< i 10] [; [= x [* x 2]] [= i [+ i 1]]]] [return x]]]]
