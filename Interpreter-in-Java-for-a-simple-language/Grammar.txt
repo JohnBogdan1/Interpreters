@@ -1,0 +1,11 @@
+<Expresie> -> <Constanta> | <Variabila> 
+<Expresie> -> ( <Expresie> )
+<Expresie> -> <Expresie> + <Expresie> 
+<Expresie> -> <Expresie> – <Expresie> 
+<Expresie> -> <Expresie> * <Expresie>
+<Expresie> -> <Expresie> ? <Expresie> : <Expresie> 
+<intreg> -> <intreg_fara_semn>  | + <intreg_fara_semn> | - <intreg_fara_semn>
+<intreg_fara_semn> -> <cifra> | <cifra><intreg_fara_semn> 
+<cifra> -> 0 | 1 | 2 |  3 | 4 | 5 | 6 | 7 | 8 | 9 
+<caracter> -> a | b | ... z | A | B | ... Z |
+<variabila> -> <caracter> | <caracter><variabila> | <variabila><intreg_fara_semn>
