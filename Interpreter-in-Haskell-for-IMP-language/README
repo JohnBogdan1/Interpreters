@@ -1,0 +1,32 @@
+Nume: Ion Bogdan-Ionut
+Grupa: 322CB	
+
+
+	In realizarea temei am folosit monade, mai exact Either Monad, pentru evaluarea 
+programului si tratarea erorilor existente. Monada este definita de un 
+constructor de tip bazat pe Either a b. Creez o instanta a monadei, Evaluator, 
+care are ca functii: return si fail, precum si operatorul bind. Operatorul bind 
+primeste un pattern si o continuare, return incapsuleaza o valoare intr-o 
+monada, iar fail incapsuleaza mesajul de eroare in monada. Tipul rezultat 
+de catre functiile de evaluare a expresiilor si a programelor este 
+Either String (Int, SymTab). Unde SymTab este un dictionar care cuprinde 
+perechi de tipul (String, Int). Folosesc acest tip (Int, SymTab), pentru 
+a returna de fiecare data un dictionar actualizat, precum si valoarea 
+intoarsa de intalnirea unui return in executia programului.
+
+	Functiile de evaluare a constructorilor, atat ale expresiei, cat si ale 
+programului se bazeaza pe folosirea operatorului bind si a functiei return. 
+Functia return ia o valoare si returneaza o instanta a monadei. Mai exact, 
+o monada se comporta ca un container, iar cu ajutorul operatorului bind, 
+poate creea noi monade ale caror valori extrase le pot evalua cu functia 
+return, intorcand o noua instanta a monadei.
+
+	Folosesc map-ul din haskell: Data.Map pentru a retine perechi de tipul: 
+(variabila, valoare). Evaluarea unui program consta in modificarea contextului 
+pas cu pas. Pentru a verifica daca exista sau nu return la finalul executiei, 
+introduc in map o variabila careia ii asociez valoarea returnata de evaluarea 
+completa a programului. Daca la final nu exista acea variabila in map, inseamna 
+ca nu exista return, deci intorc eroare.
+
+	Parsarea nu este implementata.
+
